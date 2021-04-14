@@ -2,6 +2,34 @@
     "name": "Space Wars",
     "id": "space_wars",
     "factions": {
+        "empire": {
+            "name": "Empire",
+            "id": "empire",
+            "url": "empire.json",
+            "color": "#231f20",
+            "alliance": "dark_side"
+        },
+        "rebels": {
+            "name": "Rebels",
+            "id": "rebels",
+            "url": "rebels.json",
+            "color": "#9a1115",
+            "alliance": "light_side"
+        },
+        "republic": {
+            "name": "Republic",
+            "id": "republic",
+            "url": "republic.json",
+            "color": "#0d407f",
+            "alliance": "light_side"
+        },
+        "separatists": {
+            "name": "Separatists",
+            "id": "separatists",
+            "url": "separatists.json",
+            "color": "#D4AF37",
+            "alliance": "dark_side"
+        }
     },
     "alliances": {"dark_side": {"name": "Dark Side"}, "light_side": {"name": "Light Side"}},
     "categories": {
