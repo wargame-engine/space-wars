@@ -60,9 +60,35 @@
         }
     },
     "powers": {
+
     },
     "weapons": {
+        "ccw": {"name": "Light CCW", "attacks": 1, "short": "Melee"},
+        "heavy_ccw": {"name": "Heavy CCW", "attacks": 1, "ap": 1, "short": "Melee"},
+        "blaster_pistol": {"name": "Blaster Pistol", "attacks": 1, "short": 6, "ap": 1, "rules": ["pistol"]},
+        "blaster_cannon": {"name": "Blaster Cannon", "attacks": 1, "short": 12, "medium": 24, "ap": 3, "rules": [{"id": "blast", "x": 2}]},
+        "twin_blaster_cannon": {"name": "Twin Blaster Cannon", "attacks": 1, "short": 12, "medium": 24, "ap": 3, "rules": [{"id": "blast", "x": 2}]},
+        "heavy_blaster_cannon": {"name": "Heavy Blaster Cannon", "attacks": 1, "short": 24, "medium": 48, "ap": 6, "rules": [{"id": "blast", "x": 2}]},
+        "twin_heavy_blaster_cannon": {"name": "Twin Heavy Blaster Cannon", "attacks": 1, "short": 24, "medium": 48, "ap": 6, "rules": [{"id": "blast", "x": 2}]},
+        "blaster_rifle": {"name": "Blaster Rifle", "attacks": 1, "short": 12, "medium": 24, "ap": 1},
+        "assault_blaster_rifle": {"name": "Assault Blaster Rifle", "attacks": 1, "short": 12, "medium": 24, "ap": 1, "rules": ["assault"]},
+        "heavy_blaster_rifle": {"name": "Heavy Blaster Rifle", "attacks": 2, "short": 18, "medium": 36, "ap": 1},
+        "blaster_lmg": {"name": "Light Blaster Machinegun", "attacks": 4, "short": 18, "medium": 36},
+        "blaster_repeater": {"name": "Light Blaster Repeater", "attacks": 3, "short": 15, "medium": 30},
+        "ion_rifle": {"name": "Ion Rifle", "attacks": 1, "short": 15, "medium": 30, "ap": 3, "rules": ["ion"]},
+        "flamethrower": {"name": "Flamethrower", "attacks": 6, "short": 6, "medium": 12, "ap": 1, "rules": ["flame"]},
+        "laser_sword": {"name": "Laser Sword", "attacks": 1, "short": "Melee", "ap": 5},
+        "missile_launcher": {
+            "name": "Missile Launcher",
+            "profiles": [{"name": "Frag", "attacks": 1, "short": 24, "medium": 48, "ap": 1, "rules": [{"id": "blast", "x": 3}]}, {"name": "AT", "attacks": 1, "short": 24, "medium": 48, "ap": 6}]
+        },
+        "heavy_blaster_mg": {"name": "Heavy Blaster Machinegun", "short": 18, "medium": 36, "attacks": 5, "ap": 2},
+        "laser_cannon": {"name": "Laser Cannon", "ap": 7, "attacks": 1, "short": 24, "medium": 48},
+        "twin_laser_cannon": {"name": "Twin Laser Cannon", "ap": 7, "attacks": 2, "short": 24, "medium": 48, "rules": []}
     },
     "rules": {
+        "speeder": {"name": "Speeder", "description": "When this unit is activated, it must first make one full Move action in a straight line its full Movement speed.", "points": ["model.movement"]},
+        "grappling_hooks": {"name": "Grappling Hooks", "description": "This model may ignore vertical movement distances when moving.", "points": ["model.movement", {"multiply": 0.25}]},
+        "ion": {"name": "Ion", "description": "This weapon gains +2 AP when targeting a unit with Damage Table(x).", "points": ["weapon.attacks", 2]}
     }
 }

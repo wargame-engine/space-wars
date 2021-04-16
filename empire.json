@@ -2,11 +2,186 @@
     "id": "empire",
     "name": "Empire",
     "units": {
+        "empire_troopers": {
+            "name": "Empire Troopers",
+            "description": "Troopers of the Empire.",
+            "category": "core",
+            "keywords": ["Infantry"],
+            "options": [
+                {"addRule": "grappling_hooks", "modelLimit": "all"}
+            ],
+            "models": [
+                {
+                    "name": "Trooper Sergeant",
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 6,
+                    "movement": 6,
+                    "weapons": [{"id": "blaster_rifle"}, {"id": "heavy_ccw", "count": 1}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Trooper",
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 6,
+                    "movement": 6,
+                    "weapons": [{"id": "blaster_rifle"}, {"id": "heavy_ccw", "count": 1}],
+                    "options": [
+                        {"replaceWeapon": "blaster_rifle", "withWeapon": ["heavy_blaster_rifle", "blaster_lmg", "missile_launcher"], "modelLimit": 1}
+                    ],
+                    "min": 4,
+                    "max": 9
+                }
+            ]
+        },
+        "snow_troopers": {
+            "name": "Snow Troopers",
+            "description": "Troopers of the Empire.",
+            "category": "core",
+            "keywords": ["Infantry"],
+            "options": [
+                {"addRule": "grappling_hooks", "modelLimit": "all"}
+            ],
+            "models": [
+                {
+                    "name": "Snow Trooper Sergeant",
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 6,
+                    "movement": 6,
+                    "weapons": [{"id": "assault_blaster_rifle"}, {"id": "heavy_ccw", "count": 1}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Snow Trooper",
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 6,
+                    "movement": 6,
+                    "weapons": [{"id": "assault_blaster_rifle"}, {"id": "heavy_ccw", "count": 1}],
+                    "options": [
+                        {"replaceWeapon": "assault_blaster_rifle", "withWeapon": ["flamethrower", "ion_rifle"], "modelLimit": 1}
+                    ],
+                    "min": 4,
+                    "max": 9
+                }
+            ]
+        },
+        "speeder_bikes": {
+            "name": "Speeder Bikes",
+            "description": "Troopers of the Empire.",
+            "category": "support",
+            "keywords": ["Bikers"],
+            "rules": ["speeder", {"id": "impact", "x": 1}, {"id": "wounds", "x": 2}],
+            "models": [
+                {
+                    "name": "Speeder Bike",
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 7,
+                    "reflexes": 6,
+                    "movement": 6,
+                    "weapons": [{"id": "blaster_pistol"}, {"id": "blaster_cannon", "mount": ["Front"]}, {"id": "heavy_ccw", "count": 1}],
+                    "min": 2,
+                    "max": 4
+                }
+            ]
+        },
+        "blaster_machinegun_team": {
+            "name": "Heavy Blaster Machinegun Team",
+            "description": "Troopers of the Empire.",
+            "category": "support",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Heavy Blaster Machinegun Team",
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 6,
+                    "movement": 6,
+                    "weapons": [{"id": "heavy_blaster_mg", "mount": ["Front"]}, {"id": "heavy_ccw", "count": 3}],
+                    "rules": [{"id": "crew", "x": 3}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "assault_tank": {
+            "name": "Assault Tank",
+            "description": "An armored tank with transport space.",
+            "rules": [{"id": "impact", "x": 6}, "vulnerable_side_rear", "damage_table_vehicle"],
+            "keywords": ["Vehicle"],
+            "min": 1,
+            "category": "heavy",
+            "max": 1,
+            "models": [
+                {
+                    "name": "Assault Tank",
+                    "movement": 10,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 12,
+                    "reflexes": 6,
+                    "rules": [{"id": "transport", "x": 12}],
+                    "weapons": ["twin_laser_cannon", {"id": "laser_cannon", "mount": ["Left", "Front"]}, {"id": "laser_cannon", "mount": ["Right", "Front"]}],
+                    "options": [
+                        {"addWeapon": ["heavy_blaster_rifle", "blaster_lmg"], "limit": 1},
+                        {"addRule": "elite_crew"}
+                    ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "heavy_walker": {
+            "name": "Heavy Walker",
+            "description": "An armored walker.",
+            "rules": [{"id": "impact", "x": 6}, "vulnerable_rear", "damage_table_vehicle"],
+            "keywords": ["Vehicle"],
+            "min": 1,
+            "category": "heavy",
+            "max": 1,
+            "models": [
+                {
+                    "name": "Heavy Walker",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 12,
+                    "reflexes": 6,
+                    "rules": ["walker"],
+                    "weapons": [{"id": "twin_heavy_blaster_cannon", "mount": ["Front"]}],
+                    "options": [
+                        {"addWeapon": [{"id": "twin_blaster_cannon", "mount": ["Front"]}]},
+                        {"addRule": "elite_crew"}
+                    ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        }
     },
     "weapons": {},
     "strategies": {
     },
     "rules": {
+        "elite_crew": {"name": "Elite Crew", "description": "This model gains +1 Accuracy and +1 Courage.", "points": 20}
     },
     "relics": {
     }
