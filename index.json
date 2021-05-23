@@ -88,6 +88,7 @@
         "twin_laser_cannon": {"name": "Twin Laser Cannon", "ap": 7, "attacks": 2, "short": 24, "medium": 48, "rules": []}
     },
     "rules": {
+        "legend_courage": {"name": "Inspired", "description": "This model gains +1 Courage.", "points": 10},
         "deflect": {
             "name": "Deflect",
             "description": "Roll a D10 each time this unit is hit by a shooting attack. On a 5 or less that hit is blocked. On a 1 or 2, the attacker is hit by the attack instead.",
