@@ -90,7 +90,7 @@
     "rules": {
         "deflect": {
             "name": "Deflect",
-            "description": "Roll a D10 each time this unit is hit by a ranged attack. On a 5 or less that hit is blocked. On a 1 or 2, the attacker is hit by the attack instead.",
+            "description": "Roll a D10 each time this unit is hit by a shooting attack. On a 5 or less that hit is blocked. On a 1 or 2, the attacker is hit by the attack instead.",
             "points": 10
         },
         "speeder": {"name": "Speeder", "description": "When this unit is activated, it must first make one full Move action in a straight line its full Movement speed.", "points": ["model.movement"]},
